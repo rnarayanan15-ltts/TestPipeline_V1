@@ -1,2 +1,2 @@
 int Add();
-int swap();
+int Swap();
