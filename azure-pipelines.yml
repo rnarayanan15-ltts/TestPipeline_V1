@@ -13,3 +13,7 @@ steps:
 - script: |
     make
   displayName: 'make'
+- task: CopyFiles@2
+  inputs:
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
