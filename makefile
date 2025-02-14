@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS = -Wall -g
 TARGET_DIR = bin
 TARGET = $(TARGET_DIR)/output_file
-SRCS = Add.c
+SRCS = main.c Add.c Swap.c
 
 all: $(TARGET_DIR) $(TARGET)
 
