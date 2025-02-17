@@ -22,3 +22,14 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'output_file'
     publishLocation: 'Container'
+- task: CopyingToGit
+  displayName: 'Push to GitHub'
+- script: |
+  git config --global user.email "Narayanan.r@partner.gknautomotive.com"
+  git config --global user.name "rnarayanan15-ltts"
+  git clone https://github.com/rnarayanan15-ltts/TestPipeline_V1.git
+  cd TestPipeline_V1
+  cp -r $(Pipeline.Workspace)/drop/* .
+  git add .
+  git commit -m "Add build output"
+  git push
